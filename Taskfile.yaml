@@ -1,0 +1,17 @@
+version: '3'
+
+tasks:
+  download:
+    desc: Download the miniaudio library
+    cmds:
+      - curl -L "https://github.com/mackron/miniaudio/archive/refs/tags/0.11.25.zip" -o "miniaudio.zip"
+      - unzip -p "miniaudio.zip" miniaudio-0.11.25/miniaudio.h > miniaudio.h
+      - unzip -p "miniaudio.zip" miniaudio-0.11.25/miniaudio.c > miniaudio.c
+
+  run:play:
+    cmds:
+      - go run ./examples/play-from-file
+
+  run:orbiting:
+    cmds:
+      - go run ./examples/orbiting-sound
