@@ -68,8 +68,8 @@ func (ng *NodeGraph) Close() {
 	ng.nodeGraph = nil
 }
 
-// GetEndpoint returns the endpoint node of the node graph.
-func (ng *NodeGraph) GetEndpoint() *Node {
+// Endpoint returns the endpoint node of the node graph.
+func (ng *NodeGraph) Endpoint() *Node {
 	if ng.nodeGraph == nil {
 		return nil
 	}
@@ -90,16 +90,16 @@ func (ng *NodeGraph) ReadPCMFrames(framesOut []float32, frameCount uint64) (uint
 	return uint64(framesRead), nil
 }
 
-// GetChannels returns the number of channels of the node graph.
-func (ng *NodeGraph) GetChannels() uint32 {
+// Channels returns the number of channels of the node graph.
+func (ng *NodeGraph) Channels() uint32 {
 	if ng.nodeGraph == nil {
 		return 0
 	}
 	return uint32(C.ma_node_graph_get_channels(ng.nodeGraph))
 }
 
-// GetTime returns the current time of the node graph.
-func (ng *NodeGraph) GetTime() uint64 {
+// Time returns the current time of the node graph.
+func (ng *NodeGraph) Time() uint64 {
 	if ng.nodeGraph == nil {
 		return 0
 	}
@@ -118,8 +118,8 @@ func (ng *NodeGraph) SetTime(globalTime uint64) error {
 	return nil
 }
 
-// GetProcessingSizeInFrames returns the processing size in frames of the node graph.
-func (ng *NodeGraph) GetProcessingSizeInFrames() uint32 {
+// ProcessingSizeInFrames returns the processing size in frames of the node graph.
+func (ng *NodeGraph) ProcessingSizeInFrames() uint32 {
 	if ng.nodeGraph == nil {
 		return 0
 	}

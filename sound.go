@@ -102,8 +102,8 @@ func (s *Sound) SetVolume(volume float32) {
 	C.ma_sound_set_volume(s.sound, C.float(volume))
 }
 
-// GetVolume gets the sound volume.
-func (s *Sound) GetVolume() float32 {
+// Volume gets the sound volume.
+func (s *Sound) Volume() float32 {
 	if s.sound == nil {
 		return 0
 	}
@@ -118,8 +118,8 @@ func (s *Sound) SetPan(pan float32) {
 	C.ma_sound_set_pan(s.sound, C.float(pan))
 }
 
-// GetPan gets the sound pan.
-func (s *Sound) GetPan() float32 {
+// Pan gets the sound pan.
+func (s *Sound) Pan() float32 {
 	if s.sound == nil {
 		return 0
 	}
@@ -134,8 +134,8 @@ func (s *Sound) SetPitch(pitch float32) {
 	C.ma_sound_set_pitch(s.sound, C.float(pitch))
 }
 
-// GetPitch gets the sound pitch.
-func (s *Sound) GetPitch() float32 {
+// Pitch gets the sound pitch.
+func (s *Sound) Pitch() float32 {
 	if s.sound == nil {
 		return 0
 	}
@@ -150,8 +150,8 @@ func (s *Sound) SetPosition(x, y, z float32) {
 	C.ma_sound_set_position(s.sound, C.float(x), C.float(y), C.float(z))
 }
 
-// GetPosition gets the sound position.
-func (s *Sound) GetPosition() (x, y, z float32) {
+// Position gets the sound position.
+func (s *Sound) Position() (x, y, z float32) {
 	if s.sound == nil {
 		return 0, 0, 0
 	}
@@ -183,8 +183,8 @@ func (s *Sound) IsPlaying() bool {
 	return C.ma_sound_is_playing(s.sound) != 0
 }
 
-// GetEngine returns the engine this sound belongs to.
-func (s *Sound) GetEngine() *Engine {
+// Engine returns the engine this sound belongs to.
+func (s *Sound) Engine() *Engine {
 	if s.sound == nil {
 		return nil
 	}
@@ -192,8 +192,8 @@ func (s *Sound) GetEngine() *Engine {
 	return &Engine{engine: engine}
 }
 
-// GetDataSource returns the data source of this sound.
-func (s *Sound) GetDataSource() unsafe.Pointer {
+// DataSource returns the data source of this sound.
+func (s *Sound) DataSource() unsafe.Pointer {
 	if s.sound == nil {
 		return nil
 	}

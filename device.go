@@ -26,8 +26,8 @@ func (dc *DeviceConfig) Close() {
 	dc.config = nil
 }
 
-// GetSampleRate returns the sample rate.
-func (dc *DeviceConfig) GetSampleRate() uint32 {
+// SampleRate returns the sample rate.
+func (dc *DeviceConfig) SampleRate() uint32 {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -41,8 +41,8 @@ func (dc *DeviceConfig) SetSampleRate(sampleRate uint32) {
 	}
 }
 
-// GetPeriodSizeInFrames returns the period size in frames.
-func (dc *DeviceConfig) GetPeriodSizeInFrames() uint32 {
+// PeriodSizeInFrames returns the period size in frames.
+func (dc *DeviceConfig) PeriodSizeInFrames() uint32 {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -56,8 +56,8 @@ func (dc *DeviceConfig) SetPeriodSizeInFrames(periodSize uint32) {
 	}
 }
 
-// GetPeriodSizeInMilliseconds returns the period size in milliseconds.
-func (dc *DeviceConfig) GetPeriodSizeInMilliseconds() uint32 {
+// PeriodSizeInMilliseconds returns the period size in milliseconds.
+func (dc *DeviceConfig) PeriodSizeInMilliseconds() uint32 {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -71,8 +71,8 @@ func (dc *DeviceConfig) SetPeriodSizeInMilliseconds(periodSize uint32) {
 	}
 }
 
-// GetPeriods returns the periods count.
-func (dc *DeviceConfig) GetPeriods() uint32 {
+// Periods returns the periods count.
+func (dc *DeviceConfig) Periods() uint32 {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -86,8 +86,8 @@ func (dc *DeviceConfig) SetPeriods(periods uint32) {
 	}
 }
 
-// GetPerformanceProfile returns the performance profile.
-func (dc *DeviceConfig) GetPerformanceProfile() C.ma_performance_profile {
+// PerformanceProfile returns the performance profile.
+func (dc *DeviceConfig) PerformanceProfile() C.ma_performance_profile {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -101,8 +101,8 @@ func (dc *DeviceConfig) SetPerformanceProfile(profile C.ma_performance_profile) 
 	}
 }
 
-// GetNoPreSilencedOutputBuffer returns whether pre-silencing of output buffer is disabled.
-func (dc *DeviceConfig) GetNoPreSilencedOutputBuffer() bool {
+// NoPreSilencedOutputBuffer returns whether pre-silencing of output buffer is disabled.
+func (dc *DeviceConfig) NoPreSilencedOutputBuffer() bool {
 	if dc == nil || dc.config == nil {
 		return false
 	}
@@ -116,8 +116,8 @@ func (dc *DeviceConfig) SetNoPreSilencedOutputBuffer(disabled bool) {
 	}
 }
 
-// GetNoClip returns whether clipping is disabled.
-func (dc *DeviceConfig) GetNoClip() bool {
+// NoClip returns whether clipping is disabled.
+func (dc *DeviceConfig) NoClip() bool {
 	if dc == nil || dc.config == nil {
 		return false
 	}
@@ -131,8 +131,8 @@ func (dc *DeviceConfig) SetNoClip(disabled bool) {
 	}
 }
 
-// GetNoDisableDenormals returns whether denormal disabling is disabled.
-func (dc *DeviceConfig) GetNoDisableDenormals() bool {
+// NoDisableDenormals returns whether denormal disabling is disabled.
+func (dc *DeviceConfig) NoDisableDenormals() bool {
 	if dc == nil || dc.config == nil {
 		return false
 	}
@@ -146,8 +146,8 @@ func (dc *DeviceConfig) SetNoDisableDenormals(disabled bool) {
 	}
 }
 
-// GetNoFixedSizedCallback returns whether fixed-sized callback disabling is enabled.
-func (dc *DeviceConfig) GetNoFixedSizedCallback() bool {
+// NoFixedSizedCallback returns whether fixed-sized callback disabling is enabled.
+func (dc *DeviceConfig) NoFixedSizedCallback() bool {
 	if dc == nil || dc.config == nil {
 		return false
 	}
@@ -161,8 +161,8 @@ func (dc *DeviceConfig) SetNoFixedSizedCallback(enabled bool) {
 	}
 }
 
-// GetDataCallback returns the data callback.
-func (dc *DeviceConfig) GetDataCallback() C.ma_device_data_proc {
+// DataCallback returns the data callback.
+func (dc *DeviceConfig) DataCallback() C.ma_device_data_proc {
 	if dc == nil || dc.config == nil {
 		return nil
 	}
@@ -176,8 +176,8 @@ func (dc *DeviceConfig) SetDataCallback(callback C.ma_device_data_proc) {
 	}
 }
 
-// GetNotificationCallback returns the notification callback.
-func (dc *DeviceConfig) GetNotificationCallback() C.ma_device_notification_proc {
+// NotificationCallback returns the notification callback.
+func (dc *DeviceConfig) NotificationCallback() C.ma_device_notification_proc {
 	if dc == nil || dc.config == nil {
 		return nil
 	}
@@ -191,8 +191,8 @@ func (dc *DeviceConfig) SetNotificationCallback(callback C.ma_device_notificatio
 	}
 }
 
-// GetStopCallback returns the stop callback.
-func (dc *DeviceConfig) GetStopCallback() C.ma_stop_proc {
+// StopCallback returns the stop callback.
+func (dc *DeviceConfig) StopCallback() C.ma_stop_proc {
 	if dc == nil || dc.config == nil {
 		return nil
 	}
@@ -206,8 +206,8 @@ func (dc *DeviceConfig) SetStopCallback(callback C.ma_stop_proc) {
 	}
 }
 
-// GetPUserData returns the user data pointer.
-func (dc *DeviceConfig) GetPUserData() unsafe.Pointer {
+// PUserData returns the user data pointer.
+func (dc *DeviceConfig) PUserData() unsafe.Pointer {
 	if dc == nil || dc.config == nil {
 		return nil
 	}
@@ -223,8 +223,8 @@ func (dc *DeviceConfig) SetPUserData(userData unsafe.Pointer) {
 
 // Playback getters
 
-// GetPlaybackDeviceID returns the playback device ID.
-func (dc *DeviceConfig) GetPlaybackDeviceID() *DeviceID {
+// PlaybackDeviceID returns the playback device ID.
+func (dc *DeviceConfig) PlaybackDeviceID() *DeviceID {
 	if dc == nil || dc.config == nil {
 		return nil
 	}
@@ -238,8 +238,8 @@ func (dc *DeviceConfig) SetPlaybackDeviceID(id *DeviceID) {
 	}
 }
 
-// GetPlaybackFormat returns the playback format.
-func (dc *DeviceConfig) GetPlaybackFormat() Format {
+// PlaybackFormat returns the playback format.
+func (dc *DeviceConfig) PlaybackFormat() Format {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -253,8 +253,8 @@ func (dc *DeviceConfig) SetPlaybackFormat(format Format) {
 	}
 }
 
-// GetPlaybackChannels returns the playback channel count.
-func (dc *DeviceConfig) GetPlaybackChannels() uint32 {
+// PlaybackChannels returns the playback channel count.
+func (dc *DeviceConfig) PlaybackChannels() uint32 {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -268,8 +268,8 @@ func (dc *DeviceConfig) SetPlaybackChannels(channels uint32) {
 	}
 }
 
-// GetPlaybackPChannelMap returns the playback channel map pointer.
-func (dc *DeviceConfig) GetPlaybackPChannelMap() unsafe.Pointer {
+// PlaybackPChannelMap returns the playback channel map pointer.
+func (dc *DeviceConfig) PlaybackPChannelMap() unsafe.Pointer {
 	if dc == nil || dc.config == nil {
 		return nil
 	}
@@ -283,8 +283,8 @@ func (dc *DeviceConfig) SetPlaybackPChannelMap(channelMap unsafe.Pointer) {
 	}
 }
 
-// GetPlaybackChannelMixMode returns the playback channel mix mode.
-func (dc *DeviceConfig) GetPlaybackChannelMixMode() ChannelMixMode {
+// PlaybackChannelMixMode returns the playback channel mix mode.
+func (dc *DeviceConfig) PlaybackChannelMixMode() ChannelMixMode {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -298,8 +298,8 @@ func (dc *DeviceConfig) SetPlaybackChannelMixMode(mode ChannelMixMode) {
 	}
 }
 
-// GetPlaybackCalculateLFEFromSpatialChannels returns whether LFE calculation from spatial channels is enabled.
-func (dc *DeviceConfig) GetPlaybackCalculateLFEFromSpatialChannels() bool {
+// PlaybackCalculateLFEFromSpatialChannels returns whether LFE calculation from spatial channels is enabled.
+func (dc *DeviceConfig) PlaybackCalculateLFEFromSpatialChannels() bool {
 	if dc == nil || dc.config == nil {
 		return false
 	}
@@ -313,8 +313,8 @@ func (dc *DeviceConfig) SetPlaybackCalculateLFEFromSpatialChannels(enabled bool)
 	}
 }
 
-// GetPlaybackShareMode returns the playback share mode.
-func (dc *DeviceConfig) GetPlaybackShareMode() C.ma_share_mode {
+// PlaybackShareMode returns the playback share mode.
+func (dc *DeviceConfig) PlaybackShareMode() C.ma_share_mode {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -330,8 +330,8 @@ func (dc *DeviceConfig) SetPlaybackShareMode(mode C.ma_share_mode) {
 
 // Capture getters
 
-// GetCaptureDeviceID returns the capture device ID.
-func (dc *DeviceConfig) GetCaptureDeviceID() *DeviceID {
+// CaptureDeviceID returns the capture device ID.
+func (dc *DeviceConfig) CaptureDeviceID() *DeviceID {
 	if dc == nil || dc.config == nil {
 		return nil
 	}
@@ -345,8 +345,8 @@ func (dc *DeviceConfig) SetCaptureDeviceID(id *DeviceID) {
 	}
 }
 
-// GetCaptureFormat returns the capture format.
-func (dc *DeviceConfig) GetCaptureFormat() Format {
+// CaptureFormat returns the capture format.
+func (dc *DeviceConfig) CaptureFormat() Format {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -360,8 +360,8 @@ func (dc *DeviceConfig) SetCaptureFormat(format Format) {
 	}
 }
 
-// GetCaptureChannels returns the capture channel count.
-func (dc *DeviceConfig) GetCaptureChannels() uint32 {
+// CaptureChannels returns the capture channel count.
+func (dc *DeviceConfig) CaptureChannels() uint32 {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -375,8 +375,8 @@ func (dc *DeviceConfig) SetCaptureChannels(channels uint32) {
 	}
 }
 
-// GetCapturePChannelMap returns the capture channel map pointer.
-func (dc *DeviceConfig) GetCapturePChannelMap() unsafe.Pointer {
+// CapturePChannelMap returns the capture channel map pointer.
+func (dc *DeviceConfig) CapturePChannelMap() unsafe.Pointer {
 	if dc == nil || dc.config == nil {
 		return nil
 	}
@@ -390,8 +390,8 @@ func (dc *DeviceConfig) SetCapturePChannelMap(channelMap unsafe.Pointer) {
 	}
 }
 
-// GetCaptureChannelMixMode returns the capture channel mix mode.
-func (dc *DeviceConfig) GetCaptureChannelMixMode() ChannelMixMode {
+// CaptureChannelMixMode returns the capture channel mix mode.
+func (dc *DeviceConfig) CaptureChannelMixMode() ChannelMixMode {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -405,8 +405,8 @@ func (dc *DeviceConfig) SetCaptureChannelMixMode(mode ChannelMixMode) {
 	}
 }
 
-// GetCaptureCalculateLFEFromSpatialChannels returns whether LFE calculation from spatial channels is enabled.
-func (dc *DeviceConfig) GetCaptureCalculateLFEFromSpatialChannels() bool {
+// CaptureCalculateLFEFromSpatialChannels returns whether LFE calculation from spatial channels is enabled.
+func (dc *DeviceConfig) CaptureCalculateLFEFromSpatialChannels() bool {
 	if dc == nil || dc.config == nil {
 		return false
 	}
@@ -420,8 +420,8 @@ func (dc *DeviceConfig) SetCaptureCalculateLFEFromSpatialChannels(enabled bool) 
 	}
 }
 
-// GetCaptureShareMode returns the capture share mode.
-func (dc *DeviceConfig) GetCaptureShareMode() C.ma_share_mode {
+// CaptureShareMode returns the capture share mode.
+func (dc *DeviceConfig) CaptureShareMode() C.ma_share_mode {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -437,8 +437,8 @@ func (dc *DeviceConfig) SetCaptureShareMode(mode C.ma_share_mode) {
 
 // WASAPI specific getters
 
-// GetWasapiNoAutoConvertSRC returns whether auto-convert SRC is disabled for WASAPI.
-func (dc *DeviceConfig) GetWasapiNoAutoConvertSRC() bool {
+// WasapiNoAutoConvertSRC returns whether auto-convert SRC is disabled for WASAPI.
+func (dc *DeviceConfig) WasapiNoAutoConvertSRC() bool {
 	if dc == nil || dc.config == nil {
 		return false
 	}
@@ -452,8 +452,8 @@ func (dc *DeviceConfig) SetWasapiNoAutoConvertSRC(disabled bool) {
 	}
 }
 
-// GetWasapiNoDefaultQualitySRC returns whether default quality SRC is disabled for WASAPI.
-func (dc *DeviceConfig) GetWasapiNoDefaultQualitySRC() bool {
+// WasapiNoDefaultQualitySRC returns whether default quality SRC is disabled for WASAPI.
+func (dc *DeviceConfig) WasapiNoDefaultQualitySRC() bool {
 	if dc == nil || dc.config == nil {
 		return false
 	}
@@ -467,8 +467,8 @@ func (dc *DeviceConfig) SetWasapiNoDefaultQualitySRC(disabled bool) {
 	}
 }
 
-// GetWasapiLoopbackProcessID returns the WASAPI loopback process ID.
-func (dc *DeviceConfig) GetWasapiLoopbackProcessID() uint32 {
+// WasapiLoopbackProcessID returns the WASAPI loopback process ID.
+func (dc *DeviceConfig) WasapiLoopbackProcessID() uint32 {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -482,8 +482,8 @@ func (dc *DeviceConfig) SetWasapiLoopbackProcessID(id uint32) {
 	}
 }
 
-// GetWasapiNoHardwareOffloading returns whether hardware offloading is disabled for WASAPI.
-func (dc *DeviceConfig) GetWasapiNoHardwareOffloading() bool {
+// WasapiNoHardwareOffloading returns whether hardware offloading is disabled for WASAPI.
+func (dc *DeviceConfig) WasapiNoHardwareOffloading() bool {
 	if dc == nil || dc.config == nil {
 		return false
 	}
@@ -499,8 +499,8 @@ func (dc *DeviceConfig) SetWasapiNoHardwareOffloading(disabled bool) {
 
 // ALSA specific getters
 
-// GetAlsaNoMMap returns whether MMap is disabled for ALSA.
-func (dc *DeviceConfig) GetAlsaNoMMap() bool {
+// AlsaNoMMap returns whether MMap is disabled for ALSA.
+func (dc *DeviceConfig) AlsaNoMMap() bool {
 	if dc == nil || dc.config == nil {
 		return false
 	}
@@ -514,8 +514,8 @@ func (dc *DeviceConfig) SetAlsaNoMMap(disabled bool) {
 	}
 }
 
-// GetAlsaNoAutoFormat returns whether auto format is disabled for ALSA.
-func (dc *DeviceConfig) GetAlsaNoAutoFormat() bool {
+// AlsaNoAutoFormat returns whether auto format is disabled for ALSA.
+func (dc *DeviceConfig) AlsaNoAutoFormat() bool {
 	if dc == nil || dc.config == nil {
 		return false
 	}
@@ -529,8 +529,8 @@ func (dc *DeviceConfig) SetAlsaNoAutoFormat(disabled bool) {
 	}
 }
 
-// GetAlsaNoAutoChannels returns whether auto channels is disabled for ALSA.
-func (dc *DeviceConfig) GetAlsaNoAutoChannels() bool {
+// AlsaNoAutoChannels returns whether auto channels is disabled for ALSA.
+func (dc *DeviceConfig) AlsaNoAutoChannels() bool {
 	if dc == nil || dc.config == nil {
 		return false
 	}
@@ -544,8 +544,8 @@ func (dc *DeviceConfig) SetAlsaNoAutoChannels(disabled bool) {
 	}
 }
 
-// GetAlsaNoAutoResample returns whether auto resample is disabled for ALSA.
-func (dc *DeviceConfig) GetAlsaNoAutoResample() bool {
+// AlsaNoAutoResample returns whether auto resample is disabled for ALSA.
+func (dc *DeviceConfig) AlsaNoAutoResample() bool {
 	if dc == nil || dc.config == nil {
 		return false
 	}
@@ -561,8 +561,8 @@ func (dc *DeviceConfig) SetAlsaNoAutoResample(disabled bool) {
 
 // Pulse specific getters
 
-// GetPulseStreamNamePlayback returns the PulseAudio playback stream name.
-func (dc *DeviceConfig) GetPulseStreamNamePlayback() string {
+// PulseStreamNamePlayback returns the PulseAudio playback stream name.
+func (dc *DeviceConfig) PulseStreamNamePlayback() string {
 	if dc == nil || dc.config == nil {
 		return ""
 	}
@@ -581,8 +581,8 @@ func (dc *DeviceConfig) SetPulseStreamNamePlayback(name string) {
 	}
 }
 
-// GetPulseStreamNameCapture returns the PulseAudio capture stream name.
-func (dc *DeviceConfig) GetPulseStreamNameCapture() string {
+// PulseStreamNameCapture returns the PulseAudio capture stream name.
+func (dc *DeviceConfig) PulseStreamNameCapture() string {
 	if dc == nil || dc.config == nil {
 		return ""
 	}
@@ -601,8 +601,8 @@ func (dc *DeviceConfig) SetPulseStreamNameCapture(name string) {
 	}
 }
 
-// GetPulseChannelMap returns the PulseAudio channel map setting.
-func (dc *DeviceConfig) GetPulseChannelMap() int32 {
+// PulseChannelMap returns the PulseAudio channel map setting.
+func (dc *DeviceConfig) PulseChannelMap() int32 {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -618,8 +618,8 @@ func (dc *DeviceConfig) SetPulseChannelMap(channelMap int32) {
 
 // CoreAudio specific getters
 
-// GetCoreaudioAllowNominalSampleRateChange returns whether nominal sample rate change is allowed for CoreAudio.
-func (dc *DeviceConfig) GetCoreaudioAllowNominalSampleRateChange() bool {
+// CoreaudioAllowNominalSampleRateChange returns whether nominal sample rate change is allowed for CoreAudio.
+func (dc *DeviceConfig) CoreaudioAllowNominalSampleRateChange() bool {
 	if dc == nil || dc.config == nil {
 		return false
 	}
@@ -635,8 +635,8 @@ func (dc *DeviceConfig) SetCoreaudioAllowNominalSampleRateChange(allowed bool) {
 
 // OpenSL specific getters
 
-// GetOpenslStreamType returns the OpenSL stream type.
-func (dc *DeviceConfig) GetOpenslStreamType() C.ma_opensl_stream_type {
+// OpenslStreamType returns the OpenSL stream type.
+func (dc *DeviceConfig) OpenslStreamType() C.ma_opensl_stream_type {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -650,8 +650,8 @@ func (dc *DeviceConfig) SetOpenslStreamType(streamType C.ma_opensl_stream_type) 
 	}
 }
 
-// GetOpenslRecordingPreset returns the OpenSL recording preset.
-func (dc *DeviceConfig) GetOpenslRecordingPreset() C.ma_opensl_recording_preset {
+// OpenslRecordingPreset returns the OpenSL recording preset.
+func (dc *DeviceConfig) OpenslRecordingPreset() C.ma_opensl_recording_preset {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -665,8 +665,8 @@ func (dc *DeviceConfig) SetOpenslRecordingPreset(preset C.ma_opensl_recording_pr
 	}
 }
 
-// GetOpenslEnableCompatibilityWorkarounds returns whether compatibility workarounds are enabled for OpenSL.
-func (dc *DeviceConfig) GetOpenslEnableCompatibilityWorkarounds() bool {
+// OpenslEnableCompatibilityWorkarounds returns whether compatibility workarounds are enabled for OpenSL.
+func (dc *DeviceConfig) OpenslEnableCompatibilityWorkarounds() bool {
 	if dc == nil || dc.config == nil {
 		return false
 	}
@@ -682,8 +682,8 @@ func (dc *DeviceConfig) SetOpenslEnableCompatibilityWorkarounds(enabled bool) {
 
 // AAudio specific getters
 
-// GetAaudioUsage returns the AAudio usage.
-func (dc *DeviceConfig) GetAaudioUsage() C.ma_aaudio_usage {
+// AaudioUsage returns the AAudio usage.
+func (dc *DeviceConfig) AaudioUsage() C.ma_aaudio_usage {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -697,8 +697,8 @@ func (dc *DeviceConfig) SetAaudioUsage(usage C.ma_aaudio_usage) {
 	}
 }
 
-// GetAaudioContentType returns the AAudio content type.
-func (dc *DeviceConfig) GetAaudioContentType() C.ma_aaudio_content_type {
+// AaudioContentType returns the AAudio content type.
+func (dc *DeviceConfig) AaudioContentType() C.ma_aaudio_content_type {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -712,8 +712,8 @@ func (dc *DeviceConfig) SetAaudioContentType(contentType C.ma_aaudio_content_typ
 	}
 }
 
-// GetAaudioInputPreset returns the AAudio input preset.
-func (dc *DeviceConfig) GetAaudioInputPreset() C.ma_aaudio_input_preset {
+// AaudioInputPreset returns the AAudio input preset.
+func (dc *DeviceConfig) AaudioInputPreset() C.ma_aaudio_input_preset {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -727,8 +727,8 @@ func (dc *DeviceConfig) SetAaudioInputPreset(preset C.ma_aaudio_input_preset) {
 	}
 }
 
-// GetAaudioAllowedCapturePolicy returns the AAudio allowed capture policy.
-func (dc *DeviceConfig) GetAaudioAllowedCapturePolicy() C.ma_aaudio_allowed_capture_policy {
+// AaudioAllowedCapturePolicy returns the AAudio allowed capture policy.
+func (dc *DeviceConfig) AaudioAllowedCapturePolicy() C.ma_aaudio_allowed_capture_policy {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -742,8 +742,8 @@ func (dc *DeviceConfig) SetAaudioAllowedCapturePolicy(policy C.ma_aaudio_allowed
 	}
 }
 
-// GetAaudioNoAutoStartAfterReroute returns whether auto start after reroute is disabled for AAudio.
-func (dc *DeviceConfig) GetAaudioNoAutoStartAfterReroute() bool {
+// AaudioNoAutoStartAfterReroute returns whether auto start after reroute is disabled for AAudio.
+func (dc *DeviceConfig) AaudioNoAutoStartAfterReroute() bool {
 	if dc == nil || dc.config == nil {
 		return false
 	}
@@ -757,8 +757,8 @@ func (dc *DeviceConfig) SetAaudioNoAutoStartAfterReroute(disabled bool) {
 	}
 }
 
-// GetAaudioEnableCompatibilityWorkarounds returns whether compatibility workarounds are enabled for AAudio.
-func (dc *DeviceConfig) GetAaudioEnableCompatibilityWorkarounds() bool {
+// AaudioEnableCompatibilityWorkarounds returns whether compatibility workarounds are enabled for AAudio.
+func (dc *DeviceConfig) AaudioEnableCompatibilityWorkarounds() bool {
 	if dc == nil || dc.config == nil {
 		return false
 	}
@@ -772,8 +772,8 @@ func (dc *DeviceConfig) SetAaudioEnableCompatibilityWorkarounds(enabled bool) {
 	}
 }
 
-// GetAaudioAllowSetBufferCapacity returns whether setting buffer capacity is allowed for AAudio.
-func (dc *DeviceConfig) GetAaudioAllowSetBufferCapacity() bool {
+// AaudioAllowSetBufferCapacity returns whether setting buffer capacity is allowed for AAudio.
+func (dc *DeviceConfig) AaudioAllowSetBufferCapacity() bool {
 	if dc == nil || dc.config == nil {
 		return false
 	}
@@ -875,8 +875,8 @@ func (d *Device) Stop() error {
 	return nil
 }
 
-// GetContext returns the context of the device.
-func (d *Device) GetContext() *Context {
+// Context returns the context of the device.
+func (d *Device) Context() *Context {
 	if d.device == nil {
 		return nil
 	}
@@ -892,40 +892,40 @@ func (d *Device) GetSampleRate() uint32 {
 	return uint32(d.device.sampleRate)
 }
 
-// GetCaptureSampleRate returns the capture sample rate of the device.
-func (d *Device) GetCaptureSampleRate() uint32 {
+// CaptureSampleRate returns the capture sample rate of the device.
+func (d *Device) CaptureSampleRate() uint32 {
 	if d.device == nil {
 		return 0
 	}
 	return uint32(d.device.capture.internalSampleRate)
 }
 
-// GetChannels returns the playback channel count of the device.
-func (d *Device) GetChannels() uint32 {
+// Channels returns the playback channel count of the device.
+func (d *Device) Channels() uint32 {
 	if d.device == nil {
 		return 0
 	}
 	return uint32(d.device.playback.channels)
 }
 
-// GetCaptureChannels returns the capture channel count of the device.
-func (d *Device) GetCaptureChannels() uint32 {
+// CaptureChannels returns the capture channel count of the device.
+func (d *Device) CaptureChannels() uint32 {
 	if d.device == nil {
 		return 0
 	}
 	return uint32(d.device.capture.channels)
 }
 
-// GetFormat returns the playback format of the device.
-func (d *Device) GetFormat() Format {
+// Format returns the playback format of the device.
+func (d *Device) Format() Format {
 	if d.device == nil {
 		return 0
 	}
 	return Format(d.device.playback.format)
 }
 
-// GetCaptureFormat returns the capture format of the device.
-func (d *Device) GetCaptureFormat() Format {
+// CaptureFormat returns the capture format of the device.
+func (d *Device) CaptureFormat() Format {
 	if d.device == nil {
 		return 0
 	}

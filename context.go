@@ -26,8 +26,8 @@ func (cc *ContextConfig) Close() {
 	cc.config = nil
 }
 
-// GetPLog returns the log pointer.
-func (cc *ContextConfig) GetPLog() *Log {
+// PLog returns the log pointer.
+func (cc *ContextConfig) PLog() *Log {
 	if cc == nil || cc.config == nil {
 		return nil
 	}
@@ -41,8 +41,8 @@ func (cc *ContextConfig) SetPLog(log *Log) {
 	}
 }
 
-// GetThreadPriority returns the thread priority.
-func (cc *ContextConfig) GetThreadPriority() C.ma_thread_priority {
+// ThreadPriority returns the thread priority.
+func (cc *ContextConfig) ThreadPriority() C.ma_thread_priority {
 	if cc == nil || cc.config == nil {
 		return 0
 	}
@@ -56,8 +56,8 @@ func (cc *ContextConfig) SetThreadPriority(priority C.ma_thread_priority) {
 	}
 }
 
-// GetThreadStackSize returns the thread stack size.
-func (cc *ContextConfig) GetThreadStackSize() uint64 {
+// ThreadStackSize returns the thread stack size.
+func (cc *ContextConfig) ThreadStackSize() uint64 {
 	if cc == nil || cc.config == nil {
 		return 0
 	}
@@ -71,8 +71,8 @@ func (cc *ContextConfig) SetThreadStackSize(size uint64) {
 	}
 }
 
-// GetPUserData returns the user data pointer.
-func (cc *ContextConfig) GetPUserData() unsafe.Pointer {
+// PUserData returns the user data pointer.
+func (cc *ContextConfig) PUserData() unsafe.Pointer {
 	if cc == nil || cc.config == nil {
 		return nil
 	}
@@ -86,8 +86,8 @@ func (cc *ContextConfig) SetPUserData(userData unsafe.Pointer) {
 	}
 }
 
-// GetDSoundHWND returns the Windows window handle for DirectSound.
-func (cc *ContextConfig) GetDSoundHWND() uintptr {
+// DSoundHWND returns the Windows window handle for DirectSound.
+func (cc *ContextConfig) DSoundHWND() uintptr {
 	if cc == nil || cc.config == nil {
 		return 0
 	}
@@ -101,8 +101,8 @@ func (cc *ContextConfig) SetDSoundHWND(hWnd uintptr) {
 	}
 }
 
-// GetAlsaUseVerboseDeviceEnumeration returns whether verbose device enumeration is enabled for ALSA.
-func (cc *ContextConfig) GetAlsaUseVerboseDeviceEnumeration() bool {
+// AlsaUseVerboseDeviceEnumeration returns whether verbose device enumeration is enabled for ALSA.
+func (cc *ContextConfig) AlsaUseVerboseDeviceEnumeration() bool {
 	if cc == nil || cc.config == nil {
 		return false
 	}
@@ -116,8 +116,8 @@ func (cc *ContextConfig) SetAlsaUseVerboseDeviceEnumeration(enabled bool) {
 	}
 }
 
-// GetPulseApplicationName returns the PulseAudio application name.
-func (cc *ContextConfig) GetPulseApplicationName() string {
+// PulseApplicationName returns the PulseAudio application name.
+func (cc *ContextConfig) PulseApplicationName() string {
 	if cc == nil || cc.config == nil {
 		return ""
 	}
@@ -136,8 +136,8 @@ func (cc *ContextConfig) SetPulseApplicationName(name string) {
 	}
 }
 
-// GetPulseServerName returns the PulseAudio server name.
-func (cc *ContextConfig) GetPulseServerName() string {
+// PulseServerName returns the PulseAudio server name.
+func (cc *ContextConfig) PulseServerName() string {
 	if cc == nil || cc.config == nil {
 		return ""
 	}
@@ -156,8 +156,8 @@ func (cc *ContextConfig) SetPulseServerName(name string) {
 	}
 }
 
-// GetPulseTryAutoSpawn returns whether auto-spawning is enabled for PulseAudio.
-func (cc *ContextConfig) GetPulseTryAutoSpawn() bool {
+// PulseTryAutoSpawn returns whether auto-spawning is enabled for PulseAudio.
+func (cc *ContextConfig) PulseTryAutoSpawn() bool {
 	if cc == nil || cc.config == nil {
 		return false
 	}
@@ -171,8 +171,8 @@ func (cc *ContextConfig) SetPulseTryAutoSpawn(enabled bool) {
 	}
 }
 
-// GetCoreAudioSessionCategory returns the CoreAudio session category.
-func (cc *ContextConfig) GetCoreAudioSessionCategory() C.ma_ios_session_category {
+// CoreAudioSessionCategory returns the CoreAudio session category.
+func (cc *ContextConfig) CoreAudioSessionCategory() C.ma_ios_session_category {
 	if cc == nil || cc.config == nil {
 		return 0
 	}
@@ -186,8 +186,8 @@ func (cc *ContextConfig) SetCoreAudioSessionCategory(category C.ma_ios_session_c
 	}
 }
 
-// GetCoreAudioSessionCategoryOptions returns the CoreAudio session category options.
-func (cc *ContextConfig) GetCoreAudioSessionCategoryOptions() uint32 {
+// CoreAudioSessionCategoryOptions returns the CoreAudio session category options.
+func (cc *ContextConfig) CoreAudioSessionCategoryOptions() uint32 {
 	if cc == nil || cc.config == nil {
 		return 0
 	}
@@ -201,8 +201,8 @@ func (cc *ContextConfig) SetCoreAudioSessionCategoryOptions(options uint32) {
 	}
 }
 
-// GetCoreAudioNoAudioSessionActivate returns whether audio session activation is disabled for iOS.
-func (cc *ContextConfig) GetCoreAudioNoAudioSessionActivate() bool {
+// CoreAudioNoAudioSessionActivate returns whether audio session activation is disabled for iOS.
+func (cc *ContextConfig) CoreAudioNoAudioSessionActivate() bool {
 	if cc == nil || cc.config == nil {
 		return false
 	}
@@ -216,8 +216,8 @@ func (cc *ContextConfig) SetCoreAudioNoAudioSessionActivate(disabled bool) {
 	}
 }
 
-// GetCoreAudioNoAudioSessionDeactivate returns whether audio session deactivation is disabled for iOS.
-func (cc *ContextConfig) GetCoreAudioNoAudioSessionDeactivate() bool {
+// CoreAudioNoAudioSessionDeactivate returns whether audio session deactivation is disabled for iOS.
+func (cc *ContextConfig) CoreAudioNoAudioSessionDeactivate() bool {
 	if cc == nil || cc.config == nil {
 		return false
 	}
@@ -231,8 +231,8 @@ func (cc *ContextConfig) SetCoreAudioNoAudioSessionDeactivate(disabled bool) {
 	}
 }
 
-// GetJackClientName returns the JACK client name.
-func (cc *ContextConfig) GetJackClientName() string {
+// JackClientName returns the JACK client name.
+func (cc *ContextConfig) JackClientName() string {
 	if cc == nil || cc.config == nil {
 		return ""
 	}
@@ -251,8 +251,8 @@ func (cc *ContextConfig) SetJackClientName(name string) {
 	}
 }
 
-// GetJackTryStartServer returns whether auto-starting the server is enabled for JACK.
-func (cc *ContextConfig) GetJackTryStartServer() bool {
+// JackTryStartServer returns whether auto-starting the server is enabled for JACK.
+func (cc *ContextConfig) JackTryStartServer() bool {
 	if cc == nil || cc.config == nil {
 		return false
 	}
@@ -312,10 +312,10 @@ func (c *Context) Close() {
 	c.context = nil
 }
 
-// GetDevices retrieves the devices from the context.
+// Devices retrieves the devices from the context.
 // It returns playback infos pointer, playback count, capture infos pointer, and capture count.
 // Do not free the returned buffers as their memory is managed internally by miniaudio.
-func (c *Context) GetDevices() (playbackInfo unsafe.Pointer, playbackCount uint32, captureInfo unsafe.Pointer, captureCount uint32, err error) {
+func (c *Context) Devices() (playbackInfo unsafe.Pointer, playbackCount uint32, captureInfo unsafe.Pointer, captureCount uint32, err error) {
 	if c.context == nil {
 		return nil, 0, nil, 0, ErrNilEngine
 	}
@@ -343,8 +343,8 @@ func (c *Context) GetDevices() (playbackInfo unsafe.Pointer, playbackCount uint3
 	return playbackInfo, playbackCount, captureInfo, captureCount, nil
 }
 
-// GetBackend returns the backend of the context.
-func (c *Context) GetBackend() C.ma_backend {
+// Backend returns the backend of the context.
+func (c *Context) Backend() C.ma_backend {
 	if c.context == nil {
 		return 0
 	}

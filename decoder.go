@@ -26,8 +26,8 @@ func (dc *DecoderConfig) Close() {
 	dc.config = nil
 }
 
-// GetFormat returns the output format.
-func (dc *DecoderConfig) GetFormat() Format {
+// Format returns the output format.
+func (dc *DecoderConfig) Format() Format {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -41,8 +41,8 @@ func (dc *DecoderConfig) SetFormat(format Format) {
 	}
 }
 
-// GetChannels returns the output channel count.
-func (dc *DecoderConfig) GetChannels() uint32 {
+// Channels returns the output channel count.
+func (dc *DecoderConfig) Channels() uint32 {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -56,8 +56,8 @@ func (dc *DecoderConfig) SetChannels(channels uint32) {
 	}
 }
 
-// GetSampleRate returns the output sample rate.
-func (dc *DecoderConfig) GetSampleRate() uint32 {
+// SampleRate returns the output sample rate.
+func (dc *DecoderConfig) SampleRate() uint32 {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -71,8 +71,8 @@ func (dc *DecoderConfig) SetSampleRate(sampleRate uint32) {
 	}
 }
 
-// GetPChannelMap returns the channel map pointer.
-func (dc *DecoderConfig) GetPChannelMap() unsafe.Pointer {
+// PChannelMap returns the channel map pointer.
+func (dc *DecoderConfig) PChannelMap() unsafe.Pointer {
 	if dc == nil || dc.config == nil {
 		return nil
 	}
@@ -86,8 +86,8 @@ func (dc *DecoderConfig) SetPChannelMap(channelMap unsafe.Pointer) {
 	}
 }
 
-// GetChannelMixMode returns the channel mix mode.
-func (dc *DecoderConfig) GetChannelMixMode() ChannelMixMode {
+// ChannelMixMode returns the channel mix mode.
+func (dc *DecoderConfig) ChannelMixMode() ChannelMixMode {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -101,8 +101,8 @@ func (dc *DecoderConfig) SetChannelMixMode(mode ChannelMixMode) {
 	}
 }
 
-// GetDitherMode returns the dither mode.
-func (dc *DecoderConfig) GetDitherMode() DitherMode {
+// DitherMode returns the dither mode.
+func (dc *DecoderConfig) DitherMode() DitherMode {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -116,8 +116,8 @@ func (dc *DecoderConfig) SetDitherMode(mode DitherMode) {
 	}
 }
 
-// GetResamplingFormat returns the resampling format.
-func (dc *DecoderConfig) GetResamplingFormat() Format {
+// ResamplingFormat returns the resampling format.
+func (dc *DecoderConfig) ResamplingFormat() Format {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -131,8 +131,8 @@ func (dc *DecoderConfig) SetResamplingFormat(format Format) {
 	}
 }
 
-// GetResamplingChannels returns the resampling channel count.
-func (dc *DecoderConfig) GetResamplingChannels() uint32 {
+// ResamplingChannels returns the resampling channel count.
+func (dc *DecoderConfig) ResamplingChannels() uint32 {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -146,8 +146,8 @@ func (dc *DecoderConfig) SetResamplingChannels(channels uint32) {
 	}
 }
 
-// GetResamplingSampleRateIn returns the resampling input sample rate.
-func (dc *DecoderConfig) GetResamplingSampleRateIn() uint32 {
+// ResamplingSampleRateIn returns the resampling input sample rate.
+func (dc *DecoderConfig) ResamplingSampleRateIn() uint32 {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -161,8 +161,8 @@ func (dc *DecoderConfig) SetResamplingSampleRateIn(sampleRateIn uint32) {
 	}
 }
 
-// GetResamplingSampleRateOut returns the resampling output sample rate.
-func (dc *DecoderConfig) GetResamplingSampleRateOut() uint32 {
+// ResamplingSampleRateOut returns the resampling output sample rate.
+func (dc *DecoderConfig) ResamplingSampleRateOut() uint32 {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -176,8 +176,8 @@ func (dc *DecoderConfig) SetResamplingSampleRateOut(sampleRateOut uint32) {
 	}
 }
 
-// GetResamplingLPFOrder returns the resampling LPF order.
-func (dc *DecoderConfig) GetResamplingLPFOrder() uint32 {
+// ResamplingLPFOrder returns the resampling LPF order.
+func (dc *DecoderConfig) ResamplingLPFOrder() uint32 {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -191,8 +191,8 @@ func (dc *DecoderConfig) SetResamplingLPFOrder(order uint32) {
 	}
 }
 
-// GetEncodingFormat returns the encoding format.
-func (dc *DecoderConfig) GetEncodingFormat() EncodingFormat {
+// EncodingFormat returns the encoding format.
+func (dc *DecoderConfig) EncodingFormat() EncodingFormat {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -206,8 +206,8 @@ func (dc *DecoderConfig) SetEncodingFormat(format EncodingFormat) {
 	}
 }
 
-// GetSeekPointCount returns the seek point count.
-func (dc *DecoderConfig) GetSeekPointCount() uint32 {
+// SeekPointCount returns the seek point count.
+func (dc *DecoderConfig) SeekPointCount() uint32 {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -221,8 +221,8 @@ func (dc *DecoderConfig) SetSeekPointCount(count uint32) {
 	}
 }
 
-// GetPPCustomBackendVTables returns the custom backend vtable pointers.
-func (dc *DecoderConfig) GetPPCustomBackendVTables() unsafe.Pointer {
+// PPCustomBackendVTables returns the custom backend vtable pointers.
+func (dc *DecoderConfig) PPCustomBackendVTables() unsafe.Pointer {
 	if dc == nil || dc.config == nil {
 		return nil
 	}
@@ -236,8 +236,8 @@ func (dc *DecoderConfig) SetPPCustomBackendVTables(vtables unsafe.Pointer) {
 	}
 }
 
-// GetCustomBackendCount returns the custom backend count.
-func (dc *DecoderConfig) GetCustomBackendCount() uint32 {
+// CustomBackendCount returns the custom backend count.
+func (dc *DecoderConfig) CustomBackendCount() uint32 {
 	if dc == nil || dc.config == nil {
 		return 0
 	}
@@ -251,8 +251,8 @@ func (dc *DecoderConfig) SetCustomBackendCount(count uint32) {
 	}
 }
 
-// GetPCustomBackendUserData returns the custom backend user data pointer.
-func (dc *DecoderConfig) GetPCustomBackendUserData() unsafe.Pointer {
+// PCustomBackendUserData returns the custom backend user data pointer.
+func (dc *DecoderConfig) PCustomBackendUserData() unsafe.Pointer {
 	if dc == nil || dc.config == nil {
 		return nil
 	}
@@ -343,8 +343,8 @@ func (d *Decoder) ReadPCMFrames(framesOut []float32) (uint64, error) {
 	return uint64(framesRead), nil
 }
 
-// GetLengthInPCMFrames returns the length in PCM frames of the decoded data.
-func (d *Decoder) GetLengthInPCMFrames() (uint64, error) {
+// LengthInPCMFrames returns the length in PCM frames of the decoded data.
+func (d *Decoder) LengthInPCMFrames() (uint64, error) {
 	if d.decoder == nil {
 		return 0, ErrNilEngine
 	}
@@ -368,8 +368,8 @@ func (d *Decoder) SeekToPCMFrame(frameNumber uint64) error {
 	return nil
 }
 
-// GetPositionInPCMFrames returns the current position in PCM frames.
-func (d *Decoder) GetPositionInPCMFrames() (uint64, error) {
+// PositionInPCMFrames returns the current position in PCM frames.
+func (d *Decoder) PositionInPCMFrames() (uint64, error) {
 	if d.decoder == nil {
 		return 0, ErrNilEngine
 	}
