@@ -21,8 +21,8 @@ func TestEngineInitAndPlaySoundFromFile(t *testing.T) {
 	defer snd.Close()
 	time.Sleep(1 * time.Second)
 	// Verify sample rate and channels (should be 0 in no device mode)
-	sampleRate := engine.GetSampleRate()
-	channels := engine.GetChannels()
+	sampleRate := engine.SampleRate()
+	channels := engine.Channels()
 	t.Logf("Engine sample rate: %d, channels: %d", sampleRate, channels)
 }
 
@@ -82,8 +82,8 @@ func TestEngineGetSampleRateAndChannels(t *testing.T) {
 	}
 	defer engine.Close()
 
-	sampleRate := engine.GetSampleRate()
-	channels := engine.GetChannels()
+	sampleRate := engine.SampleRate()
+	channels := engine.Channels()
 	t.Logf("Sample rate: %d, Channels: %d", sampleRate, channels)
 
 	if engine.engine == nil {
@@ -142,7 +142,7 @@ func TestEngineTimeFunctions(t *testing.T) {
 	}
 	defer engine.Close()
 
-	time1 := engine.GetTimeInPCMFrames()
+	time1 := engine.TimeInPCMFrames()
 	t.Logf("Initial time: %d", time1)
 
 	err = engine.SetTimeInPCMFrames(100)
@@ -150,7 +150,7 @@ func TestEngineTimeFunctions(t *testing.T) {
 		t.Fatalf("Failed to set time: %v", err)
 	}
 
-	time2 := engine.GetTimeInPCMFrames()
+	time2 := engine.TimeInPCMFrames()
 	t.Logf("After set time: %d", time2)
 
 	if time2 != 100 {
@@ -177,7 +177,7 @@ func TestEngineListenerPosition(t *testing.T) {
 		t.Fatalf("Failed to set listener position: %v", err)
 	}
 
-	x, y, z := engine.ListenerGetPosition(0)
+	x, y, z := engine.ListenerPosition(0)
 	t.Logf("Listener position: (%f, %f, %f)", x, y, z)
 
 	if x != 1.0 || y != 2.0 || z != 3.0 {
@@ -199,7 +199,7 @@ func TestEngineListenerDirection(t *testing.T) {
 		t.Fatalf("Failed to set listener direction: %v", err)
 	}
 
-	x, y, z := engine.ListenerGetDirection(0)
+	x, y, z := engine.ListenerDirection(0)
 	t.Logf("Listener direction: (%f, %f, %f)", x, y, z)
 
 	if x != 0 || y != 0 || z != 1 {
@@ -221,7 +221,7 @@ func TestEngineListenerVelocity(t *testing.T) {
 		t.Fatalf("Failed to set listener velocity: %v", err)
 	}
 
-	x, y, z := engine.ListenerGetVelocity(0)
+	x, y, z := engine.ListenerVelocity(0)
 	t.Logf("Listener velocity: (%f, %f, %f)", x, y, z)
 
 	if x != 1.0 || y != 0 || z != 0 {
@@ -286,7 +286,7 @@ func TestEngineNilPointer(t *testing.T) {
 	}()
 
 	var engine *Engine = nil
-	_ = engine.GetSampleRate()
+	_ = engine.SampleRate()
 	// This will panic because Go methods receive the receiver first,
 	// and the nil check happens inside the method.
 	// The panic is expected, but we catch it above.
@@ -297,17 +297,17 @@ func TestEngineNilPointer(t *testing.T) {
 func TestEngineNilPointerSafe(t *testing.T) {
 	engine := &Engine{engine: nil}
 
-	if engine.GetSampleRate() != 0 {
+	if engine.SampleRate() != 0 {
 		t.Errorf("Expected 0 for nil engine GetSampleRate")
 	}
-	if engine.GetChannels() != 0 {
+	if engine.Channels() != 0 {
 		t.Errorf("Expected 0 for nil engine GetChannels")
 	}
-	if engine.GetTimeInPCMFrames() != 0 {
+	if engine.TimeInPCMFrames() != 0 {
 		t.Errorf("Expected 0 for nil engine GetTimeInPCMFrames")
 	}
 
-	x, y, z := engine.ListenerGetPosition(0)
+	x, y, z := engine.ListenerPosition(0)
 	if x != 0 || y != 0 || z != 0 {
 		t.Errorf("Expected (0, 0, 0) for nil engine ListenerGetPosition")
 	}
@@ -319,12 +319,12 @@ func TestEngineNilPointerSafe(t *testing.T) {
 		t.Logf("Got expected error: %v", err)
 	}
 
-	x, y, z = engine.ListenerGetDirection(0)
+	x, y, z = engine.ListenerDirection(0)
 	if x != 0 || y != 0 || z != 0 {
 		t.Errorf("Expected (0, 0, 0) for nil engine ListenerGetDirection")
 	}
 
-	x, y, z = engine.ListenerGetVelocity(0)
+	x, y, z = engine.ListenerVelocity(0)
 	if x != 0 || y != 0 || z != 0 {
 		t.Errorf("Expected (0, 0, 0) for nil engine ListenerGetVelocity")
 	}

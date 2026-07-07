@@ -30,7 +30,7 @@ func main() {
 		time.Sleep(1 * time.Millisecond)
 	}
 	// Verify sample rate and channels (should be 0 in no device mode)
-	sampleRate := engine.GetSampleRate()
-	channels := engine.GetChannels()
+	sampleRate := engine.SampleRate()
+	channels := engine.Channels()
 	log.Println("Sample rate: ", sampleRate, "Channels: ", channels)
 }

@@ -26,8 +26,8 @@ func (ec *EngineConfig) Close() {
 	ec.config = nil
 }
 
-// GetListenerCount returns the listener count.
-func (ec *EngineConfig) GetListenerCount() uint32 {
+// ListenerCount returns the listener count.
+func (ec *EngineConfig) ListenerCount() uint32 {
 	if ec == nil || ec.config == nil {
 		return 0
 	}
@@ -41,8 +41,8 @@ func (ec *EngineConfig) SetListenerCount(count uint32) {
 	}
 }
 
-// GetChannels returns the channel count.
-func (ec *EngineConfig) GetChannels() uint32 {
+// Channels returns the channel count.
+func (ec *EngineConfig) Channels() uint32 {
 	if ec == nil || ec.config == nil {
 		return 0
 	}
@@ -56,8 +56,8 @@ func (ec *EngineConfig) SetChannels(channels uint32) {
 	}
 }
 
-// GetSampleRate returns the sample rate.
-func (ec *EngineConfig) GetSampleRate() uint32 {
+// SampleRate returns the sample rate.
+func (ec *EngineConfig) SampleRate() uint32 {
 	if ec == nil || ec.config == nil {
 		return 0
 	}
@@ -71,8 +71,8 @@ func (ec *EngineConfig) SetSampleRate(sampleRate uint32) {
 	}
 }
 
-// GetPeriodSizeInFrames returns the period size in frames.
-func (ec *EngineConfig) GetPeriodSizeInFrames() uint32 {
+// PeriodSizeInFrames returns the period size in frames.
+func (ec *EngineConfig) PeriodSizeInFrames() uint32 {
 	if ec == nil || ec.config == nil {
 		return 0
 	}
@@ -86,8 +86,8 @@ func (ec *EngineConfig) SetPeriodSizeInFrames(periodSize uint32) {
 	}
 }
 
-// GetPeriodSizeInMilliseconds returns the period size in milliseconds.
-func (ec *EngineConfig) GetPeriodSizeInMilliseconds() uint32 {
+// PeriodSizeInMilliseconds returns the period size in milliseconds.
+func (ec *EngineConfig) PeriodSizeInMilliseconds() uint32 {
 	if ec == nil || ec.config == nil {
 		return 0
 	}
@@ -101,8 +101,8 @@ func (ec *EngineConfig) SetPeriodSizeInMilliseconds(periodSize uint32) {
 	}
 }
 
-// GetGainSmoothTimeInFrames returns the gain smooth time in frames.
-func (ec *EngineConfig) GetGainSmoothTimeInFrames() uint32 {
+// GainSmoothTimeInFrames returns the gain smooth time in frames.
+func (ec *EngineConfig) GainSmoothTimeInFrames() uint32 {
 	if ec == nil || ec.config == nil {
 		return 0
 	}
@@ -116,8 +116,8 @@ func (ec *EngineConfig) SetGainSmoothTimeInFrames(frames uint32) {
 	}
 }
 
-// GetGainSmoothTimeInMilliseconds returns the gain smooth time in milliseconds.
-func (ec *EngineConfig) GetGainSmoothTimeInMilliseconds() uint32 {
+// GainSmoothTimeInMilliseconds returns the gain smooth time in milliseconds.
+func (ec *EngineConfig) GainSmoothTimeInMilliseconds() uint32 {
 	if ec == nil || ec.config == nil {
 		return 0
 	}
@@ -131,8 +131,8 @@ func (ec *EngineConfig) SetGainSmoothTimeInMilliseconds(milliseconds uint32) {
 	}
 }
 
-// GetDefaultVolumeSmoothTimeInPCMFrames returns the default volume smooth time in PCM frames.
-func (ec *EngineConfig) GetDefaultVolumeSmoothTimeInPCMFrames() uint32 {
+// DefaultVolumeSmoothTimeInPCMFrames returns the default volume smooth time in PCM frames.
+func (ec *EngineConfig) DefaultVolumeSmoothTimeInPCMFrames() uint32 {
 	if ec == nil || ec.config == nil {
 		return 0
 	}
@@ -146,8 +146,8 @@ func (ec *EngineConfig) SetDefaultVolumeSmoothTimeInPCMFrames(frames uint32) {
 	}
 }
 
-// GetPreMixStackSizeInBytes returns the pre-mix stack size in bytes.
-func (ec *EngineConfig) GetPreMixStackSizeInBytes() uint32 {
+// PreMixStackSizeInBytes returns the pre-mix stack size in bytes.
+func (ec *EngineConfig) PreMixStackSizeInBytes() uint32 {
 	if ec == nil || ec.config == nil {
 		return 0
 	}
@@ -161,8 +161,8 @@ func (ec *EngineConfig) SetPreMixStackSizeInBytes(size uint32) {
 	}
 }
 
-// GetNoAutoStart returns whether auto start is disabled.
-func (ec *EngineConfig) GetNoAutoStart() bool {
+// NoAutoStart returns whether auto start is disabled.
+func (ec *EngineConfig) NoAutoStart() bool {
 	if ec == nil || ec.config == nil {
 		return false
 	}
@@ -176,8 +176,8 @@ func (ec *EngineConfig) SetNoAutoStart(noAutoStart bool) {
 	}
 }
 
-// GetNoDevice returns whether device creation is disabled.
-func (ec *EngineConfig) GetNoDevice() bool {
+// NoDevice returns whether device creation is disabled.
+func (ec *EngineConfig) NoDevice() bool {
 	if ec == nil || ec.config == nil {
 		return false
 	}
@@ -191,8 +191,8 @@ func (ec *EngineConfig) SetNoDevice(noDevice bool) {
 	}
 }
 
-// GetMonoExpansionMode returns the mono expansion mode.
-func (ec *EngineConfig) GetMonoExpansionMode() uint32 {
+// MonoExpansionMode returns the mono expansion mode.
+func (ec *EngineConfig) MonoExpansionMode() uint32 {
 	if ec == nil || ec.config == nil {
 		return 0
 	}
@@ -206,8 +206,8 @@ func (ec *EngineConfig) SetMonoExpansionMode(mode uint32) {
 	}
 }
 
-// GetPLog returns the log pointer.
-func (ec *EngineConfig) GetPLog() *Log {
+// PLog returns the log pointer.
+func (ec *EngineConfig) PLog() *Log {
 	if ec == nil || ec.config == nil {
 		return nil
 	}
@@ -221,8 +221,8 @@ func (ec *EngineConfig) SetPLog(log *Log) {
 	}
 }
 
-// GetPContext returns the context pointer.
-func (ec *EngineConfig) GetPContext() *Context {
+// PContext returns the context pointer.
+func (ec *EngineConfig) PContext() *Context {
 	if ec == nil || ec.config == nil {
 		return nil
 	}
@@ -236,8 +236,8 @@ func (ec *EngineConfig) SetPContext(ctx *Context) {
 	}
 }
 
-// GetPDevice returns the device pointer.
-func (ec *EngineConfig) GetPDevice() *Device {
+// PDevice returns the device pointer.
+func (ec *EngineConfig) PDevice() *Device {
 	if ec == nil || ec.config == nil {
 		return nil
 	}
@@ -251,8 +251,8 @@ func (ec *EngineConfig) SetPDevice(device *Device) {
 	}
 }
 
-// GetPPaymentDeviceID returns the playback device ID pointer.
-func (ec *EngineConfig) GetPPaymentDeviceID() *DeviceID {
+// PaymentDeviceID returns the playback device ID pointer.
+func (ec *EngineConfig) PaymentDeviceID() *DeviceID {
 	if ec == nil || ec.config == nil {
 		return nil
 	}
@@ -266,8 +266,8 @@ func (ec *EngineConfig) SetPPaymentDeviceID(deviceID *DeviceID) {
 	}
 }
 
-// GetDataCallback returns the data callback.
-func (ec *EngineConfig) GetDataCallback() C.ma_device_data_proc {
+// DataCallback returns the data callback.
+func (ec *EngineConfig) DataCallback() C.ma_device_data_proc {
 	if ec == nil || ec.config == nil {
 		return nil
 	}
@@ -281,8 +281,8 @@ func (ec *EngineConfig) SetDataCallback(callback C.ma_device_data_proc) {
 	}
 }
 
-// GetNotificationCallback returns the notification callback.
-func (ec *EngineConfig) GetNotificationCallback() C.ma_device_notification_proc {
+// NotificationCallback returns the notification callback.
+func (ec *EngineConfig) NotificationCallback() C.ma_device_notification_proc {
 	if ec == nil || ec.config == nil {
 		return nil
 	}
@@ -296,8 +296,8 @@ func (ec *EngineConfig) SetNotificationCallback(callback C.ma_device_notificatio
 	}
 }
 
-// GetOnProcess returns the on process callback.
-func (ec *EngineConfig) GetOnProcess() C.ma_engine_process_proc {
+// OnProcess returns the on process callback.
+func (ec *EngineConfig) OnProcess() C.ma_engine_process_proc {
 	if ec == nil || ec.config == nil {
 		return nil
 	}
@@ -311,8 +311,8 @@ func (ec *EngineConfig) SetOnProcess(callback C.ma_engine_process_proc) {
 	}
 }
 
-// GetPProcessUserData returns the user data for onProcess.
-func (ec *EngineConfig) GetPProcessUserData() unsafe.Pointer {
+// PProcessUserData returns the user data for onProcess.
+func (ec *EngineConfig) PProcessUserData() unsafe.Pointer {
 	if ec == nil || ec.config == nil {
 		return nil
 	}
@@ -402,24 +402,24 @@ func (e *Engine) PlaySound(filePath string) error {
 	return nil
 }
 
-// GetSampleRate returns the sample rate of the engine.
-func (e *Engine) GetSampleRate() uint32 {
+// SampleRate returns the sample rate of the engine.
+func (e *Engine) SampleRate() uint32 {
 	if e.engine == nil {
 		return 0
 	}
 	return uint32(C.ma_engine_get_sample_rate(e.engine))
 }
 
-// GetChannels returns the number of channels of the engine.
-func (e *Engine) GetChannels() uint32 {
+// Channels returns the number of channels of the engine.
+func (e *Engine) Channels() uint32 {
 	if e.engine == nil {
 		return 0
 	}
 	return uint32(C.ma_engine_get_channels(e.engine))
 }
 
-// GetTimeInPCMFrames returns the current global time in PCM frames.
-func (e *Engine) GetTimeInPCMFrames() uint64 {
+// TimeInPCMFrames returns the current global time in PCM frames.
+func (e *Engine) TimeInPCMFrames() uint64 {
 	if e.engine == nil {
 		return 0
 	}
@@ -438,6 +438,14 @@ func (e *Engine) SetTimeInPCMFrames(time uint64) error {
 	return nil
 }
 
+// Volume returns the engine volume.
+func (e *Engine) Volume() float32 {
+	if e.engine == nil {
+		return 0
+	}
+	return float32(C.ma_engine_get_volume(e.engine))
+}
+
 // SetVolume sets the engine volume.
 func (e *Engine) SetVolume(volume float32) error {
 	if e.engine == nil {
@@ -450,6 +458,14 @@ func (e *Engine) SetVolume(volume float32) error {
 	return nil
 }
 
+// GainDB returns the engine gain in dB.
+func (e *Engine) GainDB() float32 {
+	if e.engine == nil {
+		return 0
+	}
+	return float32(C.ma_engine_get_gain_db(e.engine))
+}
+
 // SetGainDB sets the engine gain in dB.
 func (e *Engine) SetGainDB(gainDB float32) error {
 	if e.engine == nil {
@@ -460,6 +476,59 @@ func (e *Engine) SetGainDB(gainDB float32) error {
 		return ErrResult(result)
 	}
 	return nil
+}
+
+// ListenerCount returns the number of listeners.
+func (e *Engine) ListenerCount() uint32 {
+	if e.engine == nil {
+		return 0
+	}
+	return uint32(C.ma_engine_get_listener_count(e.engine))
+}
+
+// FindClosestListener finds the closest listener to the given position.
+func (e *Engine) FindClosestListener(x, y, z float32) uint32 {
+	if e.engine == nil {
+		return 0
+	}
+	return uint32(C.ma_engine_find_closest_listener(e.engine, C.float(x), C.float(y), C.float(z)))
+}
+
+// ListenerPosition returns the position of the listener.
+func (e *Engine) ListenerPosition(listenerIndex uint32) (x, y, z float32) {
+	if e.engine == nil {
+		return 0, 0, 0
+	}
+	pos := C.ma_engine_listener_get_position(e.engine, C.ma_uint32(listenerIndex))
+	return float32(pos.x), float32(pos.y), float32(pos.z)
+}
+
+// ListenerDirection returns the direction of the listener.
+func (e *Engine) ListenerDirection(listenerIndex uint32) (x, y, z float32) {
+	if e.engine == nil {
+		return 0, 0, 0
+	}
+	dir := C.ma_engine_listener_get_direction(e.engine, C.ma_uint32(listenerIndex))
+	return float32(dir.x), float32(dir.y), float32(dir.z)
+}
+
+// ListenerVelocity returns the velocity of the listener.
+func (e *Engine) ListenerVelocity(listenerIndex uint32) (x, y, z float32) {
+	if e.engine == nil {
+		return 0, 0, 0
+	}
+	vel := C.ma_engine_listener_get_velocity(e.engine, C.ma_uint32(listenerIndex))
+	return float32(vel.x), float32(vel.y), float32(vel.z)
+}
+
+// ListenerCone returns the cone of the listener.
+func (e *Engine) ListenerCone(listenerIndex uint32) (innerAngle, outerAngle, outerGain float32) {
+	if e.engine == nil {
+		return 0, 0, 0
+	}
+	var _innerAngle, _outerAngle, _outerGain C.float
+	C.ma_engine_listener_get_cone(e.engine, C.ma_uint32(listenerIndex), &_innerAngle, &_outerAngle, &_outerGain)
+	return float32(_innerAngle), float32(_outerAngle), float32(_outerGain)
 }
 
 // ListenerSetPosition sets the position of the listener.
@@ -489,31 +558,13 @@ func (e *Engine) ListenerSetVelocity(listenerIndex uint32, x, y, z float32) erro
 	return nil
 }
 
-// ListenerGetPosition returns the position of the listener.
-func (e *Engine) ListenerGetPosition(listenerIndex uint32) (x, y, z float32) {
+// ListenerSetCone sets the cone of the listener.
+func (e *Engine) ListenerSetCone(listenerIndex uint32, innerAngle, outerAngle, outerGain float32) error {
 	if e.engine == nil {
-		return 0, 0, 0
+		return ErrNilEngine
 	}
-	pos := C.ma_engine_listener_get_position(e.engine, C.ma_uint32(listenerIndex))
-	return float32(pos.x), float32(pos.y), float32(pos.z)
-}
-
-// ListenerGetDirection returns the direction of the listener.
-func (e *Engine) ListenerGetDirection(listenerIndex uint32) (x, y, z float32) {
-	if e.engine == nil {
-		return 0, 0, 0
-	}
-	dir := C.ma_engine_listener_get_direction(e.engine, C.ma_uint32(listenerIndex))
-	return float32(dir.x), float32(dir.y), float32(dir.z)
-}
-
-// ListenerGetVelocity returns the velocity of the listener.
-func (e *Engine) ListenerGetVelocity(listenerIndex uint32) (x, y, z float32) {
-	if e.engine == nil {
-		return 0, 0, 0
-	}
-	vel := C.ma_engine_listener_get_velocity(e.engine, C.ma_uint32(listenerIndex))
-	return float32(vel.x), float32(vel.y), float32(vel.z)
+	C.ma_engine_listener_set_cone(e.engine, C.ma_uint32(listenerIndex), C.float(innerAngle), C.float(outerAngle), C.float(outerGain))
+	return nil
 }
 
 // ListenerSetWorldUp sets the world up vector of the listener.
@@ -530,7 +581,7 @@ func (e *Engine) ListenerSetEnabled(listenerIndex uint32, enabled bool) error {
 	if e.engine == nil {
 		return ErrNilEngine
 	}
-	C.ma_engine_listener_set_enabled(e.engine, C.ma_bool32(boolToCInt(enabled)), 0)
+	C.ma_engine_listener_set_enabled(e.engine, C.ma_uint32(listenerIndex), C.ma_bool32(boolToCInt(enabled)))
 	return nil
 }
 
@@ -550,10 +601,117 @@ func (e *Engine) GetDevice() *C.ma_device {
 	return C.ma_engine_get_device(e.engine)
 }
 
+// ReadPCMFrames reads PCM frames from the engine.
+func (e *Engine) ReadPCMFrames(frameCount uint64, pFramesOut []float32) (framesRead uint64, err error) {
+	if e.engine == nil {
+		return 0, ErrNilEngine
+	}
+	var framesReadC C.ma_uint64
+	var outPtr unsafe.Pointer
+	//var lenC C.size_t
+	if len(pFramesOut) > 0 {
+		outPtr = unsafe.Pointer(&pFramesOut[0])
+		//lenC = C.size_t(len(pFramesOut))
+	}
+	result := C.ma_engine_read_pcm_frames(e.engine, outPtr, C.ma_uint64(frameCount), &framesReadC)
+	if result != 0 {
+		return 0, ErrResult(result)
+	}
+	framesRead = uint64(framesReadC)
+	return framesRead, nil
+}
+
+// NodeGraph returns the underlying node graph.
+func (e *Engine) NodeGraph() *C.ma_node_graph {
+	if e.engine == nil {
+		return nil
+	}
+	return C.ma_engine_get_node_graph(e.engine)
+}
+
+// ResourceManager returns the underlying resource manager.
+func (e *Engine) ResourceManager() *C.ma_resource_manager {
+	if e.engine == nil {
+		return nil
+	}
+	return C.ma_engine_get_resource_manager(e.engine)
+}
+
+// Log returns the underlying log.
+func (e *Engine) Log() *C.ma_log {
+	if e.engine == nil {
+		return nil
+	}
+	return C.ma_engine_get_log(e.engine)
+}
+
+// Endpoint returns the endpoint node.
+func (e *Engine) Endpoint() *Node {
+	if e.engine == nil {
+		return nil
+	}
+	return &Node{node: (*C.ma_node)(C.ma_engine_get_endpoint(e.engine))}
+}
+
+// TimeInMilliseconds returns the current global time in milliseconds.
+func (e *Engine) TimeInMilliseconds() uint64 {
+	if e.engine == nil {
+		return 0
+	}
+	return uint64(C.ma_engine_get_time_in_milliseconds(e.engine))
+}
+
+// SetTimeInMilliseconds sets the current global time in milliseconds.
+func (e *Engine) SetTimeInMilliseconds(time uint64) error {
+	if e.engine == nil {
+		return ErrNilEngine
+	}
+	result := C.ma_engine_set_time_in_milliseconds(e.engine, C.ma_uint64(time))
+	if result != 0 {
+		return ErrResult(result)
+	}
+	return nil
+}
+
+// Time returns the current global time in PCM frames (deprecated).
+func (e *Engine) Time() uint64 {
+	if e.engine == nil {
+		return 0
+	}
+	return uint64(C.ma_engine_get_time(e.engine))
+}
+
+// SetTime sets the global time in PCM frames (deprecated).
+func (e *Engine) SetTime(time uint64) error {
+	if e.engine == nil {
+		return ErrNilEngine
+	}
+	result := C.ma_engine_set_time(e.engine, C.ma_uint64(time))
+	if result != 0 {
+		return ErrResult(result)
+	}
+	return nil
+}
+
+// PlaySoundEx plays a sound with the given file path, parent node, and input bus index.
+func (e *Engine) PlaySoundEx(filePath string, pNode *Node, nodeInputBusIndex uint32) error {
+	if e.engine == nil {
+		return ErrNilEngine
+	}
+	cPath := C.CString(filePath)
+	defer C.free(unsafe.Pointer(cPath))
+	var node unsafe.Pointer
+	if pNode != nil {
+		node = unsafe.Pointer(pNode.node)
+	}
+	result := C.ma_engine_play_sound_ex(e.engine, cPath, node, C.ma_uint32(nodeInputBusIndex))
+	if result != 0 {
+		return ErrResult(result)
+	}
+	return nil
+}
+
 // PlaySoundFromFile creates and starts a sound from a file path.
-// Note: This function requires ma_sound_init_from_file which is defined in miniaudio.h
-// under #ifndef MA_NO_RESOURCE_MANAGER. Currently, this function is not implemented
-// because miniaudio.c does not include the implementation.
 func (e *Engine) PlaySoundFromFile(filePath string, flags SoundFlags, group *Sound, doneFence unsafe.Pointer) (*Sound, error) {
 	if e.engine == nil {
 		return nil, ErrNilEngine
@@ -587,9 +745,6 @@ func (e *Engine) PlaySoundFromFile(filePath string, flags SoundFlags, group *Sou
 }
 
 // PlaySoundFromDataSource creates and starts a sound from a data source.
-// Note: This function requires ma_sound_init_from_data_source which is defined in miniaudio.h
-// under #ifndef MA_NO_RESOURCE_MANAGER. Currently, this function is not implemented
-// because miniaudio.c does not include the implementation.
 func (e *Engine) PlaySoundFromDataSource(dataSource DataSource, flags SoundFlags, group *Sound) (*Sound, error) {
 	if e.engine == nil {
 		return nil, ErrNilEngine
@@ -616,9 +771,6 @@ func (e *Engine) PlaySoundFromDataSource(dataSource DataSource, flags SoundFlags
 }
 
 // CopySound creates a copy of an existing sound.
-// Note: This function requires ma_sound_init_copy which is defined in miniaudio.h
-// under #ifndef MA_NO_RESOURCE_MANAGER. Currently, this function is not implemented
-// because miniaudio.c does not include the implementation.
 func (e *Engine) CopySound(existing *Sound, flags SoundFlags, group *Sound) (*Sound, error) {
 	if e.engine == nil {
 		return nil, ErrNilEngine
