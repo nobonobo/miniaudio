@@ -15,14 +15,16 @@ type EngineConfig struct {
 
 // NewEngineConfig creates a new EngineConfig and calls ma_engine_config_init.
 func NewEngineConfig() *EngineConfig {
-	config := C.ma_engine_config_init()
-	return &EngineConfig{config: &config}
+	config := (*C.ma_engine_config)(C.malloc(C.sizeof_ma_engine_config))
+	*config = C.ma_engine_config_init()
+	return &EngineConfig{config: config}
 }
 
 func (ec *EngineConfig) Close() {
 	if ec.config == nil {
 		return
 	}
+	C.free(unsafe.Pointer(ec.config))
 	ec.config = nil
 }
 
